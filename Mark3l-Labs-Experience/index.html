@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#08090b">
+<meta name="description" content="Mark3l Labs — Diseño, personalización y fabricación 3D. Explora proyectos, herramientas y modelos descargables.">
+<meta property="og:title" content="Mark3l Labs — Ideas made tangible">
+<meta property="og:description" content="Diseño, personalización y fabricación 3D.">
+<title>Mark3l Labs — Ideas made tangible</title>
+<link rel="icon" href="assets/mark3l-logo.svg" type="image/svg+xml">
+<style>
+:root{--bg:#08090b;--bg2:#0d0f12;--panel:#12151a;--panel2:#191d23;--line:#282e36;--text:#f5f6f7;--muted:#969da8;--silver:#d9dde2;--accent:#aeb8c6;--max:1240px;--radius:18px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:92px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;line-height:1.55;overflow-x:hidden}
+a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}button{cursor:pointer}
+.container{width:min(var(--max),90%);margin:auto}
+header{height:76px;position:sticky;top:0;z-index:100;background:rgba(8,9,11,.78);backdrop-filter:blur(24px) saturate(150%);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:750;letter-spacing:-.7px;font-size:18px;white-space:nowrap}
+.brand img{width:43px;height:43px;object-fit:contain}
+.brand .labs{color:#9ca4af;font-weight:450}
+.navlinks{display:flex;align-items:center;gap:26px}
+.navlinks a{font-size:12px;color:#b8bec8;transition:color .2s}
+.navlinks a:hover{color:#fff}
+.nav-actions{display:flex;gap:9px;align-items:center}
+.pill{display:inline-flex;align-items:center;justify-content:center;padding:10px 15px;border-radius:99px;background:#f0f2f4;color:#0b0c0e;font-size:11px;font-weight:750;border:1px solid #f0f2f4;transition:.25s}
+.pill:hover{transform:translateY(-2px);background:#cfd5dc}
+.pill.ghost{background:transparent;color:#e8ebef;border-color:#414852}
+.pill.ghost:hover{background:#171b21}
+.menu{display:none;border:0;background:none;color:white;font-size:24px}
+.hero{min-height:690px;position:relative;display:flex;align-items:center;overflow:hidden;border-bottom:1px solid #ffffff0d}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 72% 45%,rgba(145,161,181,.16),transparent 42%),linear-gradient(110deg,#08090b 20%,#0b0d11 65%,#08090b)}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.03fr .97fr;align-items:center;gap:38px;padding:78px 0 95px}
+.eyebrow,.kicker{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#aeb7c3;font-weight:750}
+.hero h1{font-size:clamp(58px,8.2vw,108px);line-height:.91;letter-spacing:-7px;margin:25px 0 24px;font-weight:750}
+.hero h1 span{display:block;background:linear-gradient(110deg,#fff 15%,#9da8b7 75%);background-clip:text;-webkit-background-clip:text;color:transparent}
+.hero-copy{max-width:540px;color:#a6adb8;font-size:16px;line-height:1.8}
+.hero-buttons{display:flex;gap:11px;flex-wrap:wrap;margin-top:32px}
+.hero-meta{display:flex;gap:22px;margin-top:45px;color:#7e8793;font-size:9px;letter-spacing:1.8px;text-transform:uppercase}
+.hero-visual{position:relative;min-height:490px;display:flex;align-items:center;justify-content:center}
+.hero-orbit{position:absolute;width:min(39vw,480px);aspect-ratio:1;border:1px solid #ffffff12;border-radius:50%;box-shadow:0 0 100px #b5c4d015,inset 0 0 90px #b5c4d00b;animation:orbit 22s linear infinite}
+.hero-orbit:before,.hero-orbit:after{content:"";position:absolute;border:1px solid #ffffff0d;border-radius:50%;inset:10%}
+.hero-orbit:after{inset:22%}
+.hero-product{position:relative;width:min(100%,470px);filter:drop-shadow(0 35px 55px #000);animation:float 7s ease-in-out infinite}
+.hero-product img{width:100%;max-height:510px;object-fit:contain;border-radius:18px;mix-blend-mode:screen;mask-image:radial-gradient(ellipse at center,#000 47%,transparent 78%)}
+.hero-caption{position:absolute;bottom:18px;right:5px;padding:12px 16px;border:1px solid #ffffff18;background:#11151bc9;backdrop-filter:blur(15px);border-radius:12px;font-size:10px;letter-spacing:1.2px;color:#d6dbe2}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-13px) rotate(1deg)}}
+@keyframes orbit{to{transform:rotate(360deg)}}
+.marquee{border-bottom:1px solid #ffffff0d;overflow:hidden;padding:17px 0;background:#0b0d10}
+.marquee-track{display:flex;gap:44px;width:max-content;animation:marquee 34s linear infinite;color:#747e8b;font-size:9px;letter-spacing:3px;text-transform:uppercase}
+.marquee-track span:after{content:"✳";margin-left:44px;color:#c3ccd8}
+@keyframes marquee{to{transform:translateX(-50%)}}
+section{padding:105px 0}
+.section-top{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:42px}
+.section-top h2{font-size:clamp(36px,5vw,59px);line-height:1;letter-spacing:-3px;margin:12px 0 0}
+.section-top p{max-width:390px;color:var(--muted);font-size:13px;margin:0}
+.intro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.intro-card{padding:25px 24px;background:linear-gradient(145deg,#15191f,#0e1014);border:1px solid var(--line);border-radius:14px;min-height:155px}
+.intro-card b{font-size:14px}.intro-card p{color:var(--muted);font-size:12px;margin:9px 0 0}
+.project-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:18px}
+.project-feature{border:1px solid var(--line);background:var(--panel);border-radius:18px;overflow:hidden;display:grid;grid-template-columns:1.05fr .95fr;min-height:360px}
+.project-photo{background:#17191d;min-height:330px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.project-photo img{width:100%;height:100%;max-height:420px;object-fit:cover;display:block}
+.project-copy{padding:30px;display:flex;flex-direction:column;justify-content:center}
+.tag{color:#9ba7b7;font-size:9px;letter-spacing:2px;text-transform:uppercase}
+.project-copy h3{font-size:27px;letter-spacing:-1px;line-height:1.1;margin:13px 0}
+.project-copy p{font-size:12px;color:var(--muted)}
+.text-link{margin-top:18px;font-size:11px;font-weight:750;color:#e2e7ed;display:inline-flex;gap:9px;align-items:center}
+.side-stack{display:grid;gap:18px}
+.mini-panel{border:1px solid var(--line);border-radius:18px;background:linear-gradient(140deg,#171b21,#0e1013);padding:27px;display:flex;flex-direction:column;justify-content:space-between;min-height:170px}
+.mini-panel h3{font-size:22px;margin:12px 0 4px}.mini-panel p{font-size:12px;color:var(--muted);margin:0}
+.tool-band{background:linear-gradient(180deg,#0c0e12,#101319 48%,#0b0d10);border-block:1px solid #ffffff0c}
+.tools-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+.tool-card{background:linear-gradient(145deg,#171c23,#101318);border:1px solid #303945;border-radius:18px;padding:30px;position:relative;overflow:hidden}
+.tool-card:after{content:"";position:absolute;width:190px;height:190px;border-radius:50%;right:-100px;top:-100px;background:#a8bdd31a;filter:blur(5px)}
+.tool-card h3{font-size:25px;letter-spacing:-1px;margin:12px 0 7px}
+.tool-card>p{color:var(--muted);font-size:12px;max-width:470px}
+.field{display:grid;gap:7px;margin:17px 0;position:relative;z-index:1}
+.field label{font-size:10px;color:#aab2bd;letter-spacing:1px;text-transform:uppercase}
+.field input,.field textarea,.field select{width:100%;background:#090c10;border:1px solid #333d49;color:#f4f5f6;padding:13px 14px;border-radius:8px;outline:none;font-size:12px}
+.field input:focus,.field textarea:focus{border-color:#9eafc3;box-shadow:0 0 0 3px #9eafc31c}
+.result{margin-top:15px;padding:13px;background:#0a0d11;border:1px solid #303944;border-radius:9px;color:#cbd5e1;font-size:11px;overflow-wrap:anywhere;display:none}
+.result.show{display:block}
+.result a{color:#dce9fa;text-decoration:underline}
+.tool-actions{display:flex;gap:8px;flex-wrap:wrap;position:relative;z-index:1}
+.small-btn{padding:11px 14px;border:1px solid #536071;background:#e8edf3;color:#101317;border-radius:8px;font-size:11px;font-weight:750}
+.small-btn.secondary{background:transparent;color:#e5eaf0;border-color:#485362}
+.range-row{display:grid;grid-template-columns:1fr 75px;gap:12px;align-items:center}
+.range-row input[type=range]{padding:0;accent-color:#d5deea}
+.model-preview{margin-top:17px;border:1px solid #333d49;border-radius:12px;background:radial-gradient(ellipse,#202936,#0b0e12 75%);min-height:175px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.model-preview svg{width:90%;max-height:190px}
+.library-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.model-card{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel)}
+.model-art{height:150px;background:linear-gradient(145deg,#202630,#111419);display:grid;place-items:center}
+.model-art svg{width:75%;height:100px}
+.model-info{padding:18px}.model-info h3{font-size:15px;margin:0 0 5px}.model-info p{font-size:11px;color:var(--muted);margin:0 0 13px}
+.model-info a{font-size:10px;font-weight:750;text-decoration:underline}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.step{padding:23px 17px 23px 0;border-bottom:1px solid var(--line)}
+.step small{font-size:9px;letter-spacing:2px;color:#8e9bab}.step h3{font-size:17px;margin:13px 0 6px}.step p{font-size:11px;color:var(--muted);margin:0}
+.opina{padding:34px;border:1px solid #394351;border-radius:18px;background:radial-gradient(ellipse at 90% 20%,#263342 0,transparent 45%),linear-gradient(120deg,#171c23,#101318);display:flex;justify-content:space-between;align-items:center;gap:25px}
+.opina h2{font-size:clamp(28px,4vw,42px);letter-spacing:-2px;margin:8px 0}.opina p{font-size:12px;color:#aab2bd;max-width:550px;margin:0}
+.contact{background:#e9ebed;color:#101216}.contact .kicker{color:#616b77}.contact .section-top p{color:#59616b}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px}.contact h2{font-size:clamp(42px,6vw,68px);line-height:.98;letter-spacing:-4px;margin:15px 0}
+.contact .field label{color:#525c68}.contact .field input,.contact .field textarea,.contact .field select{background:transparent;border-color:#bdc4cc;color:#11151a}
+.contact .field input::placeholder,.contact .field textarea::placeholder{color:#737b85}
+.contact .small-btn{background:#11151a;color:white;border:0;width:100%;padding:15px}
+footer{padding:28px 0;border-top:1px solid var(--line)}
+.footer-row{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center}
+.footer-row p{font-size:10px;color:#858e9a;margin:0}
+.admin-overlay{position:fixed;inset:0;z-index:200;background:#050608f5;backdrop-filter:blur(20px);display:none;overflow:auto;padding:25px}
+.admin-overlay.open{display:block}
+.admin-shell{width:min(900px,100%);margin:35px auto;background:#11151a;border:1px solid #303945;border-radius:18px;padding:26px}
+.admin-head{display:flex;justify-content:space-between;gap:20px;align-items:center}
+.admin-shell input,.admin-shell textarea,.admin-shell select{width:100%;background:#080a0d;color:#fff;border:1px solid #343c47;padding:12px;border-radius:7px;margin:7px 0 13px}
+.admin-shell label{font-size:11px;color:#b7c0cc}
+.admin-row{border-top:1px solid #303945;padding:15px 0;display:flex;justify-content:space-between;gap:15px;align-items:center;font-size:12px}
+.admin-note{font-size:11px;color:#9da7b4;line-height:1.6}
+.toast{position:fixed;bottom:25px;left:50%;transform:translate(-50%,20px);background:#e9edf2;color:#111;padding:12px 18px;border-radius:30px;font-size:11px;font-weight:750;opacity:0;pointer-events:none;transition:.3s;z-index:300}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr  .8fr}.hero h1{letter-spacing:-4px}.project-feature{grid-template-columns:1fr}.project-photo{height:270px}.navlinks{gap:14px}.navlinks a{font-size:11px}}
+@media(max-width:720px){.navlinks{display:none;position:absolute;top:76px;left:0;right:0;background:#0e1116;padding:22px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}.navlinks.show{display:flex}.menu{display:block}.nav-actions .pill.ghost{display:none}.hero-grid{grid-template-columns:1fr;padding:78px 0 95px}.hero-visual{min-height:300px}.hero-orbit{width:300px}.hero-product{max-width:310px}.hero h1{font-size:clamp(58px,13vw,86px)}.section-top{align-items:flex-start;flex-direction:column}.intro-grid,.tools-grid,.contact-grid{grid-template-columns:1fr}.library-grid{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.opina{align-items:flex-start;flex-direction:column}.hero-meta{flex-wrap:wrap}}
+@media(max-width:480px){section{padding:76px 0}.intro-grid,.library-grid{grid-template-columns:1fr}.project-grid{grid-template-columns:1fr}.hero h1{letter-spacing:-3px}.hero-meta{gap:12px}.admin-overlay{padding:10px}.admin-shell{padding:18px;margin:10px auto}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header><div class="container nav">
+<a class="brand" href="#inicio"><img src="assets/mark3l-logo.svg" alt="Mark3l Labs"><span>Mark3l <span class="labs">Labs</span></span></a>
+<nav class="navlinks" id="navlinks"><a href="#proyectos">Proyectos</a><a href="#herramientas">Herramientas</a><a href="#modelos">Modelos 3D</a><a href="#opina">Opina-Ya</a><a href="#contacto">Contacto</a></nav>
+<div class="nav-actions"><a class="pill ghost" href="#modelos">Explorar modelos</a><a class="pill" href="#contacto">Hablemos ↗</a><button class="menu" aria-label="Abrir menú" onclick="document.getElementById('navlinks').classList.toggle('show')">☰</button></div>
+</div></header>
+<main>
+<section class="hero" id="inicio"><div class="container hero-grid">
+<div class="hero-copy-wrap">
+<div class="eyebrow">DISEÑO · PERSONALIZACIÓN · FABRICACIÓN 3D</div>
+<h1>Ideas made <span>tangible.</span></h1>
+<p class="hero-copy">Convertimos ideas en objetos. Diseño, personalización y fabricación mediante impresión 3D, con una mirada puesta en los detalles y en las posibilidades de cada proyecto.</p>
+<div class="hero-buttons"><a class="pill" href="#proyectos">Descubrir proyectos ↗</a><a class="pill ghost" href="#herramientas">Probar herramientas</a></div>
+<div class="hero-meta"><span>Diseño 3D</span><span>Personalización</span><span>Fabricación aditiva</span></div>
+</div>
+<div class="hero-visual"><div class="hero-orbit"></div><div class="hero-product"><img src="assets/images/llavero-oficial-mark3l.jpg" alt="Llavero físico de Mark3l Labs"></div><div class="hero-caption">01 / OBJETO REAL · MARK3L LABS</div></div>
+</div></section>
+<div class="marquee"><div class="marquee-track"><span>DESIGN</span><span>MAKE</span><span>CREATE</span><span>PRINT</span><span>ITERATE</span><span>DESIGN</span><span>MAKE</span><span>CREATE</span><span>PRINT</span><span>ITERATE</span></div></div>
+<section class="container" style="padding-bottom:45px"><div class="intro-grid reveal">
+<div class="intro-card"><b>Diseño personalizado</b><p>Ideas y piezas adaptadas a una necesidad, una identidad o una función concreta.</p></div>
+<div class="intro-card"><b>Fabricación 3D</b><p>Del concepto digital al objeto físico mediante procesos de impresión 3D.</p></div>
+<div class="intro-card"><b>Creatividad aplicada</b><p>Exploración de formas, materiales y soluciones para dar vida a nuevos proyectos.</p></div>
+</div></section>
+<section class="container" id="proyectos"><div class="section-top reveal"><div><div class="kicker">01 / PORTFOLIO</div><h2>Hecho para tomar forma.</h2></div><p>Una selección de proyectos reales. Cada pieza es una oportunidad para explorar el diseño y la fabricación desde otra perspectiva.</p></div>
+<div class="project-grid reveal">
+<article class="project-feature"><div class="project-photo"><img src="assets/images/llavero-oficial-mark3l.jpg" alt="Llavero oficial Mark3l Labs"></div><div class="project-copy"><div class="tag">01 / IDENTIDAD · LLAVERO</div><h3>Llavero oficial<br>Mark3l Labs</h3><p>Diseño circular con identidad gráfica en relieve y contraste de dos colores. Una pieza física que lleva la marca a su propio universo de objetos.</p><a class="text-link" href="#contacto">Consultar sobre un proyecto ↗</a></div></article>
+<div class="side-stack">
+<div class="mini-panel"><div><div class="tag">EXPLORAR</div><h3>Placas & señalética</h3><p>Identidad, información y diseño aplicado a superficies.</p></div><a class="text-link" href="#contacto">Ver posibilidades ↗</a></div>
+<div class="mini-panel"><div><div class="tag">CREAR</div><h3>Objetos a medida</h3><p>Accesorios, soportes y soluciones desarrolladas desde una idea.</p></div><a class="text-link" href="#herramientas">Probar herramientas ↗</a></div>
+</div></div></section>
+<section class="tool-band" id="herramientas"><div class="container"><div class="section-top reveal"><div><div class="kicker">02 / LAB TOOLS</div><h2>Herramientas útiles.<br>Ideas en movimiento.</h2></div><p>Pequeñas utilidades interactivas para creadores, negocios y personas que quieren convertir una idea en algo tangible.</p></div>
+<div class="tools-grid reveal">
+<div class="tool-card"><div class="kicker">TOOL 01 / GOOGLE REVIEWS</div><h3>Generador de enlace de reseñas</h3><p>Introduce el Place ID de un negocio y genera un enlace directo para que sus clientes puedan dejar una reseña en Google.</p>
+<div class="field"><label for="placeId">Google Place ID</label><input id="placeId" placeholder="Ej. ChIJN1t_tDeuEmsRUsoyG83frY4" autocomplete="off"></div>
+<div class="tool-actions"><button class="small-btn" onclick="makeReviewLink()">Generar enlace ↗</button><button class="small-btn secondary" onclick="clearReview()">Limpiar</button></div>
+<div class="result" id="reviewResult" aria-live="polite"></div>
+<p style="font-size:10px;margin-top:12px">El Place ID se obtiene desde las herramientas oficiales de Google Maps Platform. Esta herramienta no consulta ni verifica automáticamente el identificador.</p>
+</div>
+<div class="tool-card"><div class="kicker">TOOL 02 / PARAMETRIC DESIGN</div><h3>Generador de llaveros</h3><p>Personaliza un diseño sencillo con texto, dimensiones y orificio para anilla. Descarga el diseño vectorial SVG para seguir editándolo o prepararlo para modelado 3D.</p>
+<div class="field"><label for="keyText">Texto del llavero</label><input id="keyText" maxlength="16" value="MARK3L"></div>
+<div class="field"><label>Ancho (mm)</label><div class="range-row"><input id="keyWidth" type="range" min="45" max="100" value="70" oninput="updateParametric()"><output id="keyWidthOut">70 mm</output></div></div>
+<div class="field"><label>Alto (mm)</label><div class="range-row"><input id="keyHeight" type="range" min="20" max="55" value="30" oninput="updateParametric()"><output id="keyHeightOut">30 mm</output></div></div>
+<div class="model-preview" id="keyPreview"></div>
+<div class="tool-actions" style="margin-top:14px"><button class="small-btn" onclick="downloadKeychain()">Descargar SVG ↧</button><button class="small-btn secondary" onclick="updateParametric()">Actualizar vista</button></div>
+<p style="font-size:10px;margin-top:12px">Prototipo vectorial 2D. No es un STL ni un archivo listo para imprimir; puedes importarlo en un programa CAD para extruirlo y ajustar el diseño.</p>
+</div>
+</div></div></section>
+<section class="container" id="modelos"><div class="section-top reveal"><div><div class="kicker">03 / MODEL LIBRARY</div><h2>Modelos para explorar.</h2></div><p>Una pequeña biblioteca inicial de recursos vectoriales descargables. Se ampliará con modelos originales de Mark3l Labs.</p></div>
+<div class="library-grid reveal">
+<article class="model-card"><div class="model-art"><svg viewBox="0 0 240 120" aria-label="Plantilla de placa"><rect x="43" y="26" width="154" height="68" rx="9" fill="none" stroke="#d6e0ed" stroke-width="3"/><circle cx="57" cy="40" r="3" fill="#d6e0ed"/><circle cx="183" cy="40" r="3" fill="#d6e0ed"/><path d="M75 58h90M75 70h60" stroke="#8fa0b4" stroke-width="4" stroke-linecap="round"/></svg></div><div class="model-info"><h3>Placa rectangular</h3><p>Plantilla SVG editable para personalizar una placa.</p><a href="models/plantilla-placa.svg" download>Descargar SVG ↧</a></div></article>
+<article class="model-card"><div class="model-art"><svg viewBox="0 0 240 120"><rect x="54" y="26" width="132" height="68" rx="34" fill="none" stroke="#d6e0ed" stroke-width="3"/><circle cx="75" cy="60" r="7" fill="none" stroke="#d6e0ed" stroke-width="3"/><path d="M98 53h65M98 66h48" stroke="#8fa0b4" stroke-width="4" stroke-linecap="round"/></svg></div><div class="model-info"><h3>Llavero ovalado</h3><p>Base vectorial con orificio para anilla.</p><a href="models/llavero-ovalado.svg" download>Descargar SVG ↧</a></div></article>
+<article class="model-card"><div class="model-art"><svg viewBox="0 0 240 120"><path d="M120 18 166 42v36l-46 24-46-24V42z" fill="none" stroke="#d6e0ed" stroke-width="3"/><path d="m74 42 46 25 46-25M120 67v35" fill="none" stroke="#8fa0b4" stroke-width="2"/></svg></div><div class="model-info"><h3>Insignia geométrica</h3><p>Forma base vectorial para insignias y emblemas.</p><a href="models/insignia.svg" download>Descargar SVG ↧</a></div></article>
+</div></section>
+<section class="container" id="proceso"><div class="section-top reveal"><div><div class="kicker">04 / WORKFLOW</div><h2>De la idea al objeto.</h2></div><p>Un proceso flexible para explorar, diseñar y fabricar piezas que responden a cada proyecto.</p></div>
+<div class="steps reveal"><article class="step"><small>01 / CONCEPTO</small><h3>Escuchar</h3><p>Entender la idea, el contexto y lo que debe resolver.</p></article><article class="step"><small>02 / DISEÑO</small><h3>Desarrollar</h3><p>Dar forma al concepto y preparar el modelo.</p></article><article class="step"><small>03 / FABRICACIÓN</small><h3>Materializar</h3><p>Convertir el diseño digital en una pieza física.</p></article><article class="step"><small>04 / REVISIÓN</small><h3>Perfeccionar</h3><p>Revisar el resultado y cuidar los detalles.</p></article></div></section>
+<section class="container" id="opina"><div class="opina reveal"><div><div class="kicker">PROYECTO DIGITAL RELACIONADO</div><h2>También creamos<br>experiencias digitales.</h2><p>Opina-Ya es un proyecto independiente orientado a facilitar el acceso a las reseñas de negocios. Descubre la iniciativa.</p></div><a class="pill" href="https://opina-ya.netlify.app/" target="_blank" rel="noopener">Descubrir Opina-Ya ↗</a></div></section>
+<section class="contact" id="contacto"><div class="container contact-grid"><div><div class="kicker">05 / CONTACTO</div><h2>Una idea empieza<br>con una conversación.</h2><p style="font-size:13px;color:#5e6670;max-width:390px">¿Tienes una propuesta, una pregunta o un proyecto en mente? Escríbenos.</p><p style="font-size:13px;margin-top:25px">mark3llabs@gmail.com</p></div>
+<form id="contactForm"><div class="field"><label for="name">Nombre</label><input id="name" name="nombre" placeholder="Tu nombre" required></div><div class="field"><label for="email">Correo electrónico</label><input id="email" name="email" type="email" placeholder="tu@email.com" required></div><div class="field"><label for="message">Cuéntanos tu idea</label><textarea id="message" name="mensaje" placeholder="Describe brevemente tu consulta..." required></textarea></div><button class="small-btn" type="submit">Preparar correo ↗</button><span style="font-size:10px;color:#69727c">Se abrirá tu aplicación de correo para revisar y enviar el mensaje.</span></form></div></section>
+</main>
+<footer><div class="container footer-row"><a class="brand" href="#inicio"><img src="assets/mark3l-logo.svg" alt="">Mark3l <span class="labs">Labs</span></a><p>DESIGN · CUSTOMIZATION · 3D PRINTING</p><p>© <span id="year"></span> Mark3l Labs</p><button class="pill ghost" onclick="openAdmin()">Admin ↗</button></div></footer>
+<div class="admin-overlay" id="admin"><div class="admin-shell"><div class="admin-head"><div><div class="kicker">MARK3L LABS / LOCAL STUDIO</div><h2 style="margin:7px 0">Gestor de contenido</h2></div><button class="pill ghost" onclick="closeAdmin()">Cerrar ×</button></div>
+<p class="admin-note">Este panel local permite editar los proyectos en este navegador y exportar/importar el catálogo. En esta versión estática los cambios no se sincronizan automáticamente con la web pública ni constituyen un acceso privado seguro. Para administración remota real se requiere backend y autenticación.</p>
+<hr style="border:0;border-top:1px solid #303945;margin:22px 0">
+<h3>Añadir un proyecto</h3><form id="adminForm"><label>Nombre</label><input name="title" required><label>Categoría</label><select name="category"><option value="llaveros">Llaveros</option><option value="placas">Placas</option><option value="qr">QR</option><option value="otros">Otros</option></select><label>Descripción</label><textarea name="description" required></textarea><label>Imagen (URL o ruta dentro de la web)</label><input name="image" placeholder="assets/images/mi-foto.jpg"><button class="small-btn" type="submit">Guardar proyecto</button></form>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin:15px 0"><button class="small-btn secondary" onclick="exportProjects()">Exportar catálogo JSON</button><label class="small-btn secondary" style="cursor:pointer">Importar JSON<input id="importJson" type="file" accept="application/json" style="display:none"></label><button class="small-btn secondary" onclick="resetProjects()">Restaurar original</button></div>
+<div id="adminList"></div></div></div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+const original=[{id:1,title:"Llavero oficial Mark3l Labs",category:"llaveros",description:"Llavero circular con identidad gráfica en relieve y contraste de dos colores. Una pieza física que presenta la identidad del estudio.",image:"assets/images/llavero-oficial-mark3l.jpg",tag:"Diseño propio · Impresión 3D"}];
+let projects;try{projects=JSON.parse(localStorage.getItem("m3l-projects")||"null")||original}catch(e){projects=original}
+const $=id=>document.getElementById(id);
+function toast(msg){$("toast").textContent=msg;$("toast").classList.add("show");setTimeout(()=>$("toast").classList.remove("show"),2400)}
+function renderProjects(){const p=projects[0];$("adminList").innerHTML=projects.map(x=>`<div class="admin-row"><span><b>${escapeHtml(x.title)}</b><br><span style="color:#9aa4b2">${escapeHtml(x.category)}</span></span><button class="small-btn secondary" onclick="removeProject(${x.id})">Eliminar</button></div>`).join("")}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function openAdmin(){$("admin").classList.add("open");renderProjects()}function closeAdmin(){$("admin").classList.remove("open")}
+$("adminForm").addEventListener("submit",e=>{e.preventDefault();const f=new FormData(e.target);projects.push({id:Date.now(),title:f.get("title"),category:f.get("category"),description:f.get("description"),image:f.get("image"),tag:"Proyecto"});localStorage.setItem("m3l-projects",JSON.stringify(projects));renderProjects();e.target.reset();toast("Proyecto guardado en este navegador")});
+function removeProject(id){projects=projects.filter(p=>p.id!==id);localStorage.setItem("m3l-projects",JSON.stringify(projects));renderProjects()}
+function exportProjects(){const b=new Blob([JSON.stringify(projects,null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="mark3l-proyectos.json";a.click();URL.revokeObjectURL(a.href)}
+$("importJson").addEventListener("change",async e=>{try{projects=JSON.parse(await e.target.files[0].text());localStorage.setItem("m3l-projects",JSON.stringify(projects));renderProjects();toast("Catálogo importado")}catch(err){toast("No se pudo leer ese JSON")}});
+function resetProjects(){if(confirm("¿Restaurar el proyecto inicial?")){projects=original;localStorage.setItem("m3l-projects",JSON.stringify(projects));renderProjects()}}
+function makeReviewLink(){const id=$("placeId").value.trim();if(!id){toast("Introduce un Place ID");return}const url="https://search.google.com/local/writereview?placeid="+encodeURIComponent(id);$("reviewResult").innerHTML=`<b>Tu enlace para reseñas:</b><br><a href="${url}" target="_blank" rel="noopener">${url}</a><div style="margin-top:12px"><button class="small-btn" onclick="copyText('${url}')">Copiar enlace</button></div>`;$("reviewResult").classList.add("show")}
+function clearReview(){$("placeId").value="";$("reviewResult").classList.remove("show")}
+function copyText(s){navigator.clipboard?.writeText(s).then(()=>toast("Enlace copiado")).catch(()=>toast("Selecciona y copia el enlace"))}
+function keySvg(){const text=$("keyText").value.trim().slice(0,16)||"MARK3L";const w=+$("keyWidth").value,h=+$("keyHeight").value;const font=Math.min(10,h*.31,w/(Math.max(text.length,4)*.65));return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}mm" height="${h}mm" viewBox="0 0 ${w} ${h}"><rect x="1" y="1" width="${w-2}" height="${h-2}" rx="${h/2}" fill="white" stroke="black" stroke-width="1.2"/><circle cx="${h/2}" cy="${h/2}" r="${Math.max(2,h*.12)}" fill="none" stroke="black" stroke-width="1.2"/><text x="${w*.57}" y="${h*.58}" text-anchor="middle" font-family="Arial,sans-serif" font-size="${font}" font-weight="bold" fill="black">${escapeHtml(text)}</text></svg>`}
+function updateParametric(){$("keyWidthOut").value=$("keyWidth").value+" mm";$("keyHeightOut").value=$("keyHeight").value+" mm";$("keyPreview").innerHTML=keySvg()}
+$("keyText").addEventListener("input",updateParametric);
+function downloadKeychain(){const blob=new Blob([keySvg()],{type:"image/svg+xml"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="mark3l-llavero-parametrico.svg";a.click();URL.revokeObjectURL(a.href);toast("SVG descargado")}
+$("contactForm").addEventListener("submit",e=>{e.preventDefault();const f=new FormData(e.target);const body=`Nombre: ${f.get("nombre")}\\nCorreo: ${f.get("email")}\\n\\nMensaje:\\n${f.get("mensaje")}`;location.href="mailto:mark3llabs@gmail.com?subject="+encodeURIComponent("Consulta desde Mark3l Labs")+"&body="+encodeURIComponent(body)});
+$("year").textContent=new Date().getFullYear();updateParametric();renderProjects();
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");observer.unobserve(e.target)}}),{threshold:.08});document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+document.querySelectorAll(".navlinks a").forEach(a=>a.addEventListener("click",()=>$("navlinks").classList.remove("show")));
+</script>
+</body></html>

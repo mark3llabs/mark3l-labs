@@ -1,0 +1,33 @@
+MARK3L LABS — EXPERIENCE WEB
+=============================
+
+CONTENIDO
+- index.html: web principal premium y responsive.
+- assets/mark3l-logo.svg: logotipo proporcionado.
+- assets/images/llavero-oficial-mark3l.jpg: fotografía real del llavero que has enviado.
+- models/: plantillas vectoriales SVG descargables.
+
+FUNCIONALIDADES
+1. Diseño responsive con animaciones sutiles y navegación móvil.
+2. Portfolio con fotografía real.
+3. Generador de enlaces de reseñas de Google a partir de Place ID.
+   El enlace generado sigue el formato oficial de Google:
+   https://search.google.com/local/writereview?placeid=PLACE_ID
+   No valida el Place ID ni consulta Google.
+4. Generador paramétrico de llavero vectorial 2D. Descarga SVG; no es STL.
+5. Biblioteca de plantillas SVG descargables.
+6. Contacto mediante mailto: el usuario revisa y envía desde su aplicación de correo.
+7. Panel local de contenido: botón Admin del pie de página. Permite añadir/quitar proyectos, exportar e importar JSON. Los cambios se guardan en el navegador local.
+
+LIMITACIONES HONESTAS DEL PANEL
+El panel de esta versión es local y no está protegido por autenticación de servidor. Los cambios no se publican automáticamente para todos los visitantes. Para un panel privado real y sincronizado hace falta un backend con autenticación y almacenamiento, por ejemplo Supabase. No introduzcas secretos ni contraseñas en este HTML estático.
+
+PUBLICAR EN NETLIFY
+1. Descomprime el ZIP.
+2. Arrastra la carpeta Mark3l-Labs-Experience a Netlify Drop / despliegue manual.
+3. Mantén juntas las carpetas assets y models y el archivo index.html.
+
+PERSONALIZACIÓN
+- Añade fotos propias a assets/images/.
+- Para mostrar nuevos proyectos de forma permanente, edita el array `original` en el script de index.html.
+- Los modelos de la carpeta models son plantillas SVG, no modelos 3D STL listos para imprimir.
